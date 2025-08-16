@@ -1,0 +1,120 @@
+DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElecoNet - الكورسات</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      direction: rtl;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .course {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .course img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .lang-switch {
+      margin-top: 10px;
+      text-align: center;
+    }
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #3498db;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="welcome">مرحبًا بكم في ElecoNet</h1>
+    <p id="desc">نوفر لكم أفضل الكورسات في البرمجة والشبكات والروبوتات</p>
+    <div class="lang-switch">
+      <button onclick="setLang('ar')">العربية</button>
+      <button onclick="setLang('en')">English</button>
+    </div>
+  </header>
+
+  <section class="courses">
+    <div class="course">
+      <img src="https://via.placeholder.com/300x200" alt="Python">
+      <h2 id="c1-title">كورس بايثون</h2>
+      <p id="c1-desc">تعلم أساسيات البرمجة باستخدام لغة Python.</p>
+    </div>
+    <div class="course">
+      <img src="https://via.placeholder.com/300x200" alt="Java">
+      <h2 id="c2-title">كورس جافا</h2>
+      <p id="c2-desc">مقدمة شاملة لتطوير التطبيقات باستخدام Java.</p>
+    </div>
+    <div class="course">
+      <img src="https://via.placeholder.com/300x200" alt="CCNA">
+      <h2 id="c3-title">كورس CCNA</h2>
+      <p id="c3-desc">أساسيات الشبكات وتحضير لشهادة Cisco CCNA.</p>
+    </div>
+    <div class="course">
+      <img src="https://via.placeholder.com/300x200" alt="Arduino">
+      <h2 id="c4-title">كورس Arduino & Robot</h2>
+      <p id="c4-desc">تعلم التحكم في الروبوتات باستخدام Arduino.</p>
+    </div>
+  </section>
+
+  <script>
+    const content = {
+      ar: {
+        welcome: "مرحبًا بكم في ElecoNet",
+        desc: "نوفر لكم أفضل الكورسات في البرمجة والشبكات والروبوتات",
+        c1: ["كورس بايثون", "تعلم أساسيات البرمجة باستخدام لغة Python."],
+        c2: ["كورس جافا", "مقدمة شاملة لتطوير التطبيقات باستخدام Java."],
+        c3: ["كورس CCNA", "أساسيات الشبكات وتحضير لشهادة Cisco CCNA."],
+        c4: ["كورس Arduino & Robot", "تعلم التحكم في الروبوتات باستخدام Arduino."]
+      },
+      en: {
+        welcome: "Welcome to ElecoNet",
+        desc: "We provide the best courses in Programming, Networking, and Robotics",
+        c1: ["Python Course", "Learn the basics of programming with Python."],
+        c2: ["Java Course", "Comprehensive introduction to Java application development."],
+        c3: ["CCNA Course", "Networking fundamentals and Cisco CCNA preparation."],
+        c4: ["Arduino & Robot Course", "Learn to control robots using Arduino."]
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById("welcome").innerText = content[lang].welcome;
+      document.getElementById("desc").innerText = content[lang].desc;
+      document.getElementById("c1-title").innerText = content[lang].c1[0];
+      document.getElementById("c1-desc").innerText = content[lang].c1[1];
+      document.getElementById("c2-title").innerText = content[lang].c2[0];
+      document.getElementById("c2-desc").innerText = content[lang].c2[1];
+      document.getElementById("c3-title").innerText = content[lang].c3[0];
+      document.getElementById("c3-desc").innerText = content[lang].c3[1];
+      document.getElementById("c4-title").innerText = content[lang].c4[0];
+      document.getElementById("c4-desc").innerText = content[lang].c4[1];
+    }
+  </script>
+</body>
+</html>
